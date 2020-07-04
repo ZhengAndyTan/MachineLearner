@@ -72,7 +72,7 @@ $$ w = argmax_{\theta} (ln(P(D|\theta)) + lnP(\theta)) = argmax_{\theta} (ln(P(D
 where the first part of the sum corresponds to the Maximum Likelihood Estimation (MLE) and the second part of the sum corresponds to the L2-Regularization.    
 
 b. If the prior comes from a Standard Laplace Distribution, then:     
-$$lnP(\theta) = ln\frac{1}{2} - {||\theta||}_{1}$$
+$$lnP(\theta) = ln\frac{1}{2} - {||\theta||}\_{1}$$
 Then $w$ would become:      
-$$ w = argmin_{\theta} (-ln(P(D|\theta)) + {||w||}_{1})$$
+$$ w = argmin_{\theta} (-ln(P(D|\theta)) + {||w||}\_{1})$$
 where the first part of the sum corresponds to the Maximum Likelihood Estimation (MLE) and the second part of the sum corresponds to the L1-Regularization.  
