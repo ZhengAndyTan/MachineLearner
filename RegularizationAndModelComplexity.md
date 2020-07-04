@@ -61,18 +61,18 @@ $$P(A|B) = \frac{P(A|B)P(A)}{P(B)}$$
 where $P(A|B)$ is called posterior, $P(B|A)$ is called likelihood, $P(A)$ is called prior, and $P(B)$ is called evidence.    
 
 When we are solving the for the parameters, we are trying to maximize the posterior probability of the coefficients $P(\theta|D)$ given the training set $D$: (symboling the problem as $w$)   
-$$ w = argmax_{\theta} P(\theta|D) = argmax_{\theta} \frac{P(\theta|D)P(\theta)}{P(D)} = argmax_{\theta} P(\theta|D)P(\theta)$$
+$$w = argmax_{\theta} P(\theta|D) = argmax_{\theta} \frac{P(\theta|D)P(\theta)}{P(D)} = argmax_{\theta} P(\theta|D)P(\theta)$$
 Taking log:
-$$ w = argmax_{\theta} (ln(P(D|\theta)) + lnP(w))$$    
+$$w = argmax_{\theta} (ln(P(D|\theta)) + lnP(w))$$    
 
 a. If the prior comes from a Standard Normal Distribution, then:
 $$lnP(\theta) = ln\frac{1}{\sqrt{2 \pi}} - \frac{1}{2}||w||_2^2$$
 Then $w$ would become:
-$$ w = argmax_{\theta} (ln(P(D|\theta)) + lnP(w)) = argmax_{\theta} (ln(P(D|\theta)) + ln\frac{1}{\sqrt{2 \pi}} - \frac{1}{2}||w||_2^2) \\\\ = argmax_{\theta} (ln(P(D|\theta)) - \frac{1}{2}||w||_2^2) = argmin_{\theta} (-ln(P(D|\theta)) + \frac{1}{2}||w||_2^2)$$
+$$w = argmax_{\theta} (ln(P(D|\theta)) + lnP(w)) = argmax_{\theta} (ln(P(D|\theta)) + ln\frac{1}{\sqrt{2 \pi}} - \frac{1}{2}||w||_2^2) \\\\ = argmax_{\theta} (ln(P(D|\theta)) - \frac{1}{2}||w||_2^2) = argmin_{\theta} (-ln(P(D|\theta)) + \frac{1}{2}||w||_2^2)$$
 where the first part of the sum corresponds to the Maximum Likelihood Estimation (MLE) and the second part of the sum corresponds to the L2-Regularization.    
 
 b. If the prior comes from a Standard Laplace Distribution, then:
 $$lnP(\theta) = ln\frac{1}{2} - ||w||_1$$
 Then $w$ would become:
-$$ w = argmin_{\theta} (-ln(P(D|\theta)) + ||w||_1)$$
+$$w = argmin_{\theta} (-ln(P(D|\theta)) + ||w||_1)$$
 where the first part of the sum corresponds to the Maximum Likelihood Estimation (MLE) and the second part of the sum corresponds to the L1-Regularization.  
