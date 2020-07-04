@@ -43,7 +43,7 @@ For each machine learning problem, once we have sticked to one certain model (Li
 $$argmin_{\theta}\ J(\theta) = J_0(\theta) + \lambda Reg(\theta)$$    
 where $J_0(\theta)$ is often refered to as the cost function, $Reg(\theta)$ is often refered to as the regularization term. $\lambda$ is the regularization parameter.     
 
-[Regularization Contour](https://pic1.zhimg.com/v2-57946b7664029047b83d1c60ab8b05f8_r.jpg)
+![Regularization Contour](https://pic1.zhimg.com/v2-57946b7664029047b83d1c60ab8b05f8_r.jpg)
 
 In the above figures, considering a two dimensional coefficients' space, the contours stand for the cost function part, where on each contour line, the cost function has the same value; whereas the square and the circle stand for the regularization part of the optimization objective.    
 
