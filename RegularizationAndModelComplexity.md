@@ -43,7 +43,7 @@ For each machine learning problem, once we have sticked to one certain model (Li
 $$argmin_{\theta}\ J(\theta) = J_0(\theta) + \lambda Reg(\theta)$$    
 where $J_0(\theta)$ is often refered to as the cost function, $Reg(\theta)$ is often refered to as the regularization term. $\lambda$ is the regularization parameter.     
 
-![Regularization Contour](https://pic1.zhimg.com/v2-57946b7664029047b83d1c60ab8b05f8_r.jpg)
+[Regularization Contour](https://pic1.zhimg.com/v2-57946b7664029047b83d1c60ab8b05f8_r.jpg)
 
 In the above figures, considering a two dimensional coefficients' space, the contours stand for the cost function part, where on each contour line, the cost function has the same value; whereas the square and the circle stand for the regularization part of the optimization objective.    
 
@@ -60,19 +60,19 @@ The Bayesian Probability is defined as follow:
 $$P(A|B) = \frac{P(A|B)P(A)}{P(B)}$$
 where $P(A|B)$ is called posterior, $P(B|A)$ is called likelihood, $P(A)$ is called prior, and $P(B)$ is called evidence.    
 
-When we are solving the for the parameters, we are trying to maximize the posterior probability of the coefficients $P(\theta|D)$ given the training set $D$: (symboling the problem as $w^*$)   
-$$ w^* = argmax_{\theta} P(\theta|D) = argmax_{\theta} \frac{P(\theta|D)P(\theta)}{P(D)} = argmax_{\theta} P(\theta|D)P(\theta)$$
+When we are solving the for the parameters, we are trying to maximize the posterior probability of the coefficients $P(\theta|D)$ given the training set $D$: (symboling the problem as $w$)   
+$$ w = argmax_{\theta} P(\theta|D) = argmax_{\theta} \frac{P(\theta|D)P(\theta)}{P(D)} = argmax_{\theta} P(\theta|D)P(\theta)$$
 Taking log:
-$$ w^* = argmax_{\theta} (ln(P(D|\theta)) + lnP(w))$$    
+$$ w = argmax_{\theta} (ln(P(D|\theta)) + lnP(w))$$    
 
 a. If the prior comes from a Standard Normal Distribution, then:
 $$lnP(\theta) = ln\frac{1}{\sqrt{2 \pi}} - \frac{1}{2}||w||_2^2$$
-Then $w^*$ would become:
-$$ w^* = argmax_{\theta} (ln(P(D|\theta)) + lnP(w)) = argmax_{\theta} (ln(P(D|\theta)) + ln\frac{1}{\sqrt{2 \pi}} - \frac{1}{2}||w||_2^2) \\\\ = argmax_{\theta} (ln(P(D|\theta)) - \frac{1}{2}||w||_2^2) = argmin_{\theta} (-ln(P(D|\theta)) + \frac{1}{2}||w||_2^2)$$
+Then $w$ would become:
+$$ w = argmax_{\theta} (ln(P(D|\theta)) + lnP(w)) = argmax_{\theta} (ln(P(D|\theta)) + ln\frac{1}{\sqrt{2 \pi}} - \frac{1}{2}||w||_2^2) \\\\ = argmax_{\theta} (ln(P(D|\theta)) - \frac{1}{2}||w||_2^2) = argmin_{\theta} (-ln(P(D|\theta)) + \frac{1}{2}||w||_2^2)$$
 where the first part of the sum corresponds to the Maximum Likelihood Estimation (MLE) and the second part of the sum corresponds to the L2-Regularization.    
 
 b. If the prior comes from a Standard Laplace Distribution, then:
 $$lnP(\theta) = ln\frac{1}{2} - ||w||_1$$
-Then $w^*$ would become:
-$$ w^* = argmin_{\theta} (-ln(P(D|\theta)) + ||w||_1)$$
+Then $w$ would become:
+$$ w = argmin_{\theta} (-ln(P(D|\theta)) + ||w||_1)$$
 where the first part of the sum corresponds to the Maximum Likelihood Estimation (MLE) and the second part of the sum corresponds to the L1-Regularization.  
