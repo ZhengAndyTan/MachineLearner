@@ -21,16 +21,16 @@ Lastly, I would do the algebra derivation from a Bayesian perspective.
 Hypothesis of SVM:
 $$h_{\Theta}(x) =
 \begin{cases}
-1 & & if \Theta^Tx \geq 0 \\
-0 & & if \Theta^Tx < 0
+1 & & if\ \Theta^Tx \geq 0 \\
+0 & & if\ \Theta^Tx < 0
 \end{cases}
 $$
 The optimization objective of SVM:    
-$$argmin_{\Theta} C\Sigma_{i=1}^m[y_icost_1(\Theta^Tx_i) + (1-y_i)cost_0(\Theta^Tx_i)] + \Sigma_{j=1}^n\Theta_j^2$$
+$$argmin_{\Theta} C\ \Sigma_{i=1}^m[y_icost_1(\Theta^Tx_i) + (1-y_i)cost_0(\Theta^Tx_i)] + \Sigma_{j=1}^n\Theta_j^2$$
 where:   
 $$
 cost(z)=
-\begin{array}
+\begin{cases}
 cost_1(z)& \text{, if y = 1} =
   \begin{cases}
   0 & & {if\ z\geq1} \\
@@ -43,7 +43,7 @@ cost_0(z)& \text{, if y = 0} =
   a(z-(-1)) & & if\ z<1
   \end{cases}
   \\
-\end{array}
+\end{cases}
 $$
 
 If we substitute the first part in the SVM objective, we can get with the Logistic Regression loss function: $y_ilog(h_{\Theta}(x_i)) + (1-y_i)log(1-h_{\Theta}(x_i))$, the objective would become almost same as that of Logistic Regression with regularization term:
@@ -130,9 +130,9 @@ $$ w = argmax_{\theta} (ln(P(D|\theta)) + lnP(\theta)) = argmax_{\theta} (ln(P(D
 where the first part of the sum corresponds to the Maximum Likelihood Estimation (MLE) and the second part of the sum corresponds to the L2-Regularization.    
 
 b. If the prior comes from a Standard Laplace Distribution, then:     
-$$lnP(\theta) = ln\frac{1}{2} - {||\theta||}\_{1}$$
+$$lnP(\theta) = ln\frac{1}{2} - {||\theta||}_{1}$$
 Then $w$ would become:      
-$$ w = argmin_{\theta} (-ln(P(D|\theta)) + {||w||}\_{1})$$
+$$ w = argmin_{\theta} (-ln(P(D|\theta)) + {||w||}_{1})$$
 where the first part of the sum corresponds to the Maximum Likelihood Estimation (MLE) and the second part of the sum corresponds to the L1-Regularization.  
 
 
@@ -149,4 +149,4 @@ The widely acknowledged purpose of regularization is to control the model comple
 
 Despite this, this note also walk through the geometric background of regularization: it enables maximum margin between different classes of the outcome variable.     
 
-Also, I verify the regularization term from a Bayesian perspective, where regularization corresponds to the maximum posterior probability of the coefficients.
+Also, the note verifies the regularization term from a Bayesian perspective, where regularization corresponds to the maximum posterior probability of the coefficients.
