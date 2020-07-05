@@ -49,7 +49,7 @@ $$argmin_{\Theta}-\frac{1}{m}\Sigma_{i=1}^m [y_ilog(h_{\Theta}(x_i)) + (1-y_i)lo
 In summary, despite the cost function, SVM and Logistic Regression are basically the same model. If we take a look from the geometric perspective, we would get the same result.   
 Considering a linear separable example, the two models are both trying to find a linear decision boundary to separate positive and negative cases:    
 
-![Linear Separable](https://github.com/ZhengAndyTan/MachineLearner/blob/master/WechatIMG85.jpeg)
+![Linear Separable 1](https://github.com/ZhengAndyTan/MachineLearner/blob/master/WechatIMG85.jpeg)
 
 Suppose the decision boundary is:
 $$w^Tx + b = 0$$
@@ -62,10 +62,13 @@ $$\begin{cases}
 \end{cases}$$
 As the following figure shows, the points that are closest to the boundary hold the equal sign. They are called 'support vectors'. The sum between two support from different classes (positive and negative) to the decision boundary respectively is the ***margin***:
 $$\gamma=\frac{2}{||\Theta||}$$
+
+![Linear Separable 1](https://github.com/ZhengAndyTan/MachineLearner/blob/master/WechatIMG86.jpeg)
+
 We would the margin to reach its maximum, which is the same as
 $$argmin_{\Theta}||\Theta||^2 = argmin_{\Theta}\Sigma_{j=1}^n\Theta_j^2$$
 
-Taking this ***margin*** into Logistic Regression enables us to understand the L2-regularization from a new perspective: the regularization term is helping to maximize the **gap** between positive and negative cases. 
+Taking this ***margin*** into Logistic Regression enables us to understand the L2-regularization from a new perspective: the regularization term is helping to maximize the **gap** between positive and negative cases.
 
 ## 2. Model and Model Complexity
 
