@@ -101,7 +101,7 @@ $$argmin_{\theta}\ J(\theta) = J_0(\theta) + \lambda Reg(\theta)$$
 where $J_0(\theta)$ is often refered to as the cost function, $Reg(\theta)$ is often refered to as the regularization term. $\lambda$ is the regularization parameter.     
 
 ![Regularization Contour](https://github.com/ZhengAndyTan/MachineLearner/blob/master/v2-57946b7664029047b83d1c60ab8b05f8_r.jpg)
-
+ 
 In the above figures, considering a two dimensional coefficients' space, the contours stand for the cost function part, where on each contour line, the cost function has the same value; whereas the square and the circle stand for the regularization part of the optimization objective.    
 
 Further away from the center of the contour, the cost function $J_0(\theta)$ gets larger; further away from the origin, the regularization term is larger. In order to find the coefficients that minimizes the objective $J(\theta)$, we shall find a balanced point between the origin and the center of the contours.   
@@ -148,4 +148,4 @@ The widely acknowledged purpose of regularization is to control the model comple
 
 Despite this, this note also walk through the geometric background of regularization: it enables maximum margin between different classes of the outcome variable.     
 
-Also, I verify the regularization term from a Bayesian perspective, where regularization corresponds to the maximum posterior probability of the coefficients. 
+Also, I verify the regularization term from a Bayesian perspective, where regularization corresponds to the maximum posterior probability of the coefficients.
