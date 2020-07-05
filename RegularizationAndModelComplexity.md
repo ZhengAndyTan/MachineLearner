@@ -12,6 +12,7 @@ Lastly, I would do the algebra derivation from a Bayesian perspective.
 2. Model and Model Complexity
 3. Regularization and Model Complexity
 4. Bayesian Probability and Regularization   
+5. Summary
 
 
 ## 1. Regularization and Maximum Margin of Support Vector Machine
@@ -70,6 +71,7 @@ $$argmin_{\Theta}||\Theta||^2 = argmin_{\Theta}\Sigma_{j=1}^n\Theta_j^2$$
 
 Taking this ***margin*** into Logistic Regression enables us to understand the L2-regularization from a new perspective: the regularization term is helping to maximize the **gap** between positive and negative cases.
 
+
 ## 2. Model and Model Complexity
 
 In Machine Learning, we always hear about many models: Linear Regression, Logistic Regression, Support Vector Machine, Decision Tree, Random Forest, XGBoost, Neural Networks, etc. When we talk about these models, mostly we refer to an untrained model structure, with multiple coefficients and hyper-parameters to be determined. Once they have been determined, the models can make predictions.    
@@ -89,7 +91,8 @@ Model 2 had more complexity, since it has more space to 'travel'.
 For example, $h_{\theta}(x) = 11 + 12x_1 + x_2$ can be described by Model 2 but not by Model 1.   
 
 In summary, we have:
-$Complexity = Model\ Complexity + No.\ of\ Coefficients + Measure\ of\ Feature\ Space$
+$$Complexity = Model\ Complexity + No.\ of\ Coefficients + Measure\ of\ Feature\ Space$$
+
 
 ## 3. Regularization and Model Complexity
 
@@ -130,3 +133,19 @@ $$lnP(\theta) = ln\frac{1}{2} - {||\theta||}\_{1}$$
 Then $w$ would become:      
 $$ w = argmin_{\theta} (-ln(P(D|\theta)) + {||w||}\_{1})$$
 where the first part of the sum corresponds to the Maximum Likelihood Estimation (MLE) and the second part of the sum corresponds to the L1-Regularization.  
+
+
+## 5. Summary
+
+This note dives into the regularization in the regularization of linear Machine Learning models:      
+
+$$argmin_{\theta}\ J(\theta) = J_0(\theta) + \lambda Reg(\theta)$$     
+
+From common senses, we have this relationship:   
+$$Complexity = Model\ Complexity + No.\ of\ Coefficients + Measure\ of\ Feature\ Space$$
+
+The widely acknowledged purpose of regularization is to control the model complexity, so that we can prevent overfitting. Because regularizations can limit the coefficients space, and that they cannot have too much variation.     
+
+Despite this, this note also walk through the geometric background of regularization: it enables maximum margin between different classes of the outcome variable.     
+
+Also, I verify the regularization term from a Bayesian perspective, where regularization corresponds to the maximum posterior probability of the coefficients. 
