@@ -23,8 +23,8 @@ Lastly, I would do the algebra derivation from a Bayesian perspective.
 Hypothesis of SVM:
 $$h_{\Theta}(x) =
 \begin{cases}
-1 & & ,\ if\ \Theta^Tx\geq0 \\
-0 & & ,\ if\ \Theta^Tx<0
+1 & & if \Theta^Tx \geq 0 \\
+0 & & if \Theta^Tx < 0
 \end{cases}
 $$
 The optimization objective of SVM:    
