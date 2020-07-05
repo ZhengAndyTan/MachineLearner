@@ -51,7 +51,21 @@ Considering a linear separable example, the two models are both trying to find a
 
 ![Linear Separable](https://github.com/ZhengAndyTan/MachineLearner/blob/master/WechatIMG85.jpeg)
 
+Suppose the decision boundary is:
+$$w^Tx + b = 0$$
+Then the distance between a training $x_0$ and the boundary $(w, b)$ can be described as:
+$$r = \frac{|{\Theta}^Tx + b|}{||\Theta||}$$
+If the decision boundary can classify all the cases right, which means:
+$$\begin{cases}
+{\Theta}^tx_i + b \geq+1, y_i = +1 \\
+{\Theta}^tx_i + b \leq-1, y_i = -1
+\end{cases}$$
+As the following figure shows, the points that are closest to the boundary hold the equal sign. They are called 'support vectors'. The sum between two support from different classes (positive and negative) to the decision boundary respectively is the ***margin***:
+$$\gamma=\frac{2}{||\Theta||}$$
+We would the margin to reach its maximum, which is the same as
+$$argmin_{\Theta}||\Theta||^2 = argmin_{\Theta}\Sigma_{j=1}^n\Theta_j^2$$
 
+Taking this ***margin*** into Logistic Regression enables us to understand the L2-regularization from a new perspective: the regularization term is helping to maximize the **gap** between positive and negative cases. 
 
 ## 2. Model and Model Complexity
 
