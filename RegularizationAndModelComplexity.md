@@ -28,7 +28,7 @@ $$argmin_{\Theta} C\Sigma_{i=1}^m[y_icost_1(\Theta^Tx_i) + (1-y_i)cost_0(\Theta^
 where:   
 $$
 cost(z)=
-\begin{cases}
+\begin{array}
 cost_1(z)& \text{, if y = 1} =
   \begin{cases}
   0 & & {if\ z\geq1} \\
@@ -41,7 +41,7 @@ cost_0(z)& \text{, if y = 0} =
   a(z-(-1)) & & if\ z<1
   \end{cases}
   \\
-\end{cases}
+\end{array}
 $$
 
 If we substitute the first part in the SVM objective, we can get with the Logistic Regression loss function: $y_ilog(h_{\Theta}(x_i)) + (1-y_i)log(1-h_{\Theta}(x_i))$, the objective would become almost same as that of Logistic Regression with regularization term:
@@ -80,7 +80,7 @@ For each machine learning problem, once we have sticked to one certain model (Li
 $$argmin_{\theta}\ J(\theta) = J_0(\theta) + \lambda Reg(\theta)$$    
 where $J_0(\theta)$ is often refered to as the cost function, $Reg(\theta)$ is often refered to as the regularization term. $\lambda$ is the regularization parameter.     
 
-![Regularization Contour](https://pic1.zhimg.com/v2-57946b7664029047b83d1c60ab8b05f8_r.jpg)
+![Regularization Contour](https://github.com/ZhengAndyTan/MachineLearner/blob/master/v2-57946b7664029047b83d1c60ab8b05f8_r.jpg)
 
 In the above figures, considering a two dimensional coefficients' space, the contours stand for the cost function part, where on each contour line, the cost function has the same value; whereas the square and the circle stand for the regularization part of the optimization objective.    
 
