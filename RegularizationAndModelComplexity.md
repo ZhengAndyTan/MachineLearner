@@ -16,6 +16,43 @@ Lastly, I would do the algebra derivation from a Bayesian perspective.
 
 ## 1. Regularization and Maximum Margin of Support Vector Machine
 
+Hypothesis of SVM:
+$$h_{\Theta}(x) =
+  \begin{cases}
+  1 & & ,\ if\ \Theta^Tx\geq0 \\
+  0 & & ,\ if\ \Theta^Tx<0
+  \end{cases}
+  $$
+The optimization objective of SVM:    
+$$argmin_{\Theta} C\Sigma_{i=1}^m[y_icost_1(\Theta^Tx_i) + (1-y_i)cost_0(\Theta^Tx_i)] + \Sigma_{j=1}^n\Theta_j^2$$
+where:   
+$$
+cost(z)=
+\begin{cases}
+cost_1(z)& \text{, if y = 1} =
+  \begin{cases}
+  0 & & {if\ z\geq1} \\
+  a(1-z) & & if\ z<1
+  \end{cases}
+  \\
+cost_0(z)& \text{, if y = 0} =
+  \begin{cases}
+  0 & & {if\ z\leq-1} \\
+  a(z-(-1)) & & if\ z<1
+  \end{cases}
+  \\
+\end{cases}
+$$
+
+If we substitute the first part in the SVM objective, we can get with the Logistic Regression loss function: $y_ilog(h_{\Theta}(x_i)) + (1-y_i)log(1-h_{\Theta}(x_i))$, the objective would become almost same as that of Logistic Regression with regularization term:
+$$argmin_{\Theta}-\frac{1}{m}\Sigma_{i=1}^m [y_ilog(h_{\Theta}(x_i)) + (1-y_i)log(1-h_{\Theta}(x_i))] + \frac{\lambda}{2m}\Sigma_{j=1}^n\Theta_j^2$$    
+In summary, despite the cost function, SVM and Logistic Regression are basically the same model. If we take a look from the geometric perspective, we would get the same result.   
+Considering a linear separable example, the two models are both trying to find a linear decision boundary to separate positive and negative cases:    
+
+![Regularization Contour](https://pic1.zhimg.com/v2-57946b7664029047b83d1c60ab8b05f8_r.jpg)
+
+
+
 ## 2. Model and Model Complexity
 
 In Machine Learning, we always hear about many models: Linear Regression, Logistic Regression, Support Vector Machine, Decision Tree, Random Forest, XGBoost, Neural Networks, etc. When we talk about these models, mostly we refer to an untrained model structure, with multiple coefficients and hyper-parameters to be determined. Once they have been determined, the models can make predictions.    
