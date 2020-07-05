@@ -1,5 +1,3 @@
-mathjax:
-        enable: true
 
 # Model Complexity and Regularization
 
