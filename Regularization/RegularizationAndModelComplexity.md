@@ -51,7 +51,7 @@ $$argmin_{\Theta}-\frac{1}{m}\Sigma_{i=1}^m [y_ilog(h_{\Theta}(x_i)) + (1-y_i)lo
 In summary, despite the cost function, SVM and Logistic Regression are basically the same model. If we take a look from the geometric perspective, we would get the same result.   
 Considering a linear separable example, the two models are both trying to find a linear decision boundary to separate positive and negative cases:    
 
-![Linear Separable 1](https://github.com/ZhengAndyTan/MachineLearner/raw/master/WechatIMG85.jpeg)
+![Linear Separable 1](https://github.com/ZhengAndyTan/MachineLearner/Regularization/raw/master/WechatIMG85.jpeg)
 
 Suppose the decision boundary is:
 $$w^Tx + b = 0$$
